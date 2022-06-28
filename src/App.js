@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Counter from "./components/Counter";
+import { useSelector } from 'react-redux'
 function App() {
+  const count = useSelector(store => store.count)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <p> <code>App.js</code> file counter : {count}</p>
+      <Counter/>
     </div>
   );
 }
 
 export default App;
+
